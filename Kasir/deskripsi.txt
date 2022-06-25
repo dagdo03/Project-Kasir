@@ -1,0 +1,6 @@
+Project Kasir menggunakan binary file dengan fungsi:
+- Menambah stok barang
+- Mengurangi stok barang
+- Mengedit harga jual barang
+- Melakukan transaksi jual beli
+- Mencetak struk
