@@ -1,0 +1,52 @@
+# Project: Kasir
+# Makefile created by Dev-C++ 5.11
+
+CPP      = g++.exe
+CC       = gcc.exe
+WINDRES  = windres.exe
+OBJ      = desain.o kurangstok.o laporankeuangan.o main.o master.o riwayattransaksi.o setok.o setruk.o transaksi.o
+LINKOBJ  = desain.o kurangstok.o laporankeuangan.o main.o master.o riwayattransaksi.o setok.o setruk.o transaksi.o
+LIBS     = -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib" -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib" -static-libgcc
+INCS     = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include"
+CXXINCS  = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++"
+BIN      = Kasir.exe
+CXXFLAGS = $(CXXINCS) -std=c++98
+CFLAGS   = $(INCS) -std=c++98
+RM       = rm.exe -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CC) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+desain.o: desain.c
+	$(CC) -c desain.c -o desain.o $(CFLAGS)
+
+kurangstok.o: kurangstok.c
+	$(CC) -c kurangstok.c -o kurangstok.o $(CFLAGS)
+
+laporankeuangan.o: laporankeuangan.c
+	$(CC) -c laporankeuangan.c -o laporankeuangan.o $(CFLAGS)
+
+main.o: main.c
+	$(CC) -c main.c -o main.o $(CFLAGS)
+
+master.o: master.c
+	$(CC) -c master.c -o master.o $(CFLAGS)
+
+riwayattransaksi.o: riwayattransaksi.c
+	$(CC) -c riwayattransaksi.c -o riwayattransaksi.o $(CFLAGS)
+
+setok.o: setok.c
+	$(CC) -c setok.c -o setok.o $(CFLAGS)
+
+setruk.o: setruk.c
+	$(CC) -c setruk.c -o setruk.o $(CFLAGS)
+
+transaksi.o: transaksi.c
+	$(CC) -c transaksi.c -o transaksi.o $(CFLAGS)
